@@ -12,14 +12,9 @@ export class LoginComponent implements OnInit {
   form: FormGroup;
   isEmpty: boolean;
   correct = true;
+  token: string;
 
-    constructor(private fb: FormBuilder, public authService: AuthService) {
-
-        this.form = this.fb.group({
-            login: ['', Validators.required],
-            password: ['', Validators.required]
-        });
-    }
+    constructor(private fb: FormBuilder, public authService: AuthService) {}
 
     login(): void {
 
@@ -51,6 +46,10 @@ export class LoginComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.form = this.fb.group({
+      login: ['', Validators.required],
+      password: ['', Validators.required]
+  });
   }
 
 }

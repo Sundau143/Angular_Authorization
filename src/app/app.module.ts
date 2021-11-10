@@ -11,7 +11,6 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { TableComponent } from './table/table.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
 @NgModule({
   declarations: [
     AppComponent,

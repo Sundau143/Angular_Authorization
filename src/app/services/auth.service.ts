@@ -12,7 +12,7 @@ export class AuthService {
 
   authorizationError = false;
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, public router: Router) { }
 
   login(username: string, password: string): any {
     return this.http.get('https://pnitfunctions.azurewebsites.net/api/token?userName=' + username + '&password=' + password);
@@ -33,6 +33,10 @@ export class AuthService {
 
   getToken(): string {
     return localStorage.getItem(this.accessTokenKey);
+  }
+
+  saveToken(token: string): void {
+    localStorage.setItem(this.accessTokenKey, token);
   }
 
   logout(): void {
